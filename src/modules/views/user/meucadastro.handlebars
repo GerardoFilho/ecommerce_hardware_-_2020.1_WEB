@@ -1,0 +1,112 @@
+
+       <!-- Texto Cadastro -->
+        <section class="py-5">
+            <div class="container">
+            </div>
+        </section>
+        <!-- /Texto Cadastro -->
+        
+
+        
+        <!-- Cadastro -->
+        <div class="container">
+            <div class="cadastro-div">
+                <div class="row">
+                    
+                    <div class="col-md-8 order-md-1 ">
+                        <h4 class="mb-3 alert alert-dark text-cadastro">Meu cadastro</h4>
+
+                        <li class="nav-item active badge">
+                            <a class="nav-item active" href="/minhaconta" style="color: black;" >
+                                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+                                </svg>
+                                Minha conta<span class="sr-only">(current)</span>    
+                            </a>
+                        </li>
+                        <hr class="mb-4">
+                        
+                        <form class="needs-validation" method="POST" action="#"novalidate>
+                            
+                            
+                            <div class="mb-3">
+                                <label for="name">Nome completo <span class="text-muted"></span></label>
+                                <input type="text" class="form-control" id="name" name="nome" value="{{nome}}" readonly>
+                                <div class="invalid-feedback">
+                                    Insira um nome válido
+                                </div>
+                            </div>
+                            
+
+                            <div class="mb-3">
+                                <label for="CPF">CPF</label>
+                                <input type="text" name="cpf" class="form-control" id="CPF"  value="{{cpf}}" readonly>
+                                <div class="invalid-feedback">
+                                    Insira um cpf válido
+                                </div>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="email">Email <span class="text-muted"></span></label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{email}}" readonly>
+                                <div class="invalid-feedback">
+                                    Insira um email válido
+                                </div>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="address">Endereço</label>
+                                <input type="text" name="endereco"class="form-control" id="address" value="{{endereco}}" readonly>
+                                <div class="invalid-feedback">
+                                    Insira um endereço válido
+                                </div>
+                            </div>
+                    
+                            <div class="row">
+                                
+                                <div class="col-md-4 mb-3">
+                                    <label for="state">Estado</label>
+                                    <input type="text" name="estado" class="form-control" id="state" placeholder="" value="{{estado}}" readonly>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <label for="city">Cidade</label>
+                                    <input type="text" name="cidade" class="form-control" id="city" placeholder="" value="{{cidade}}" readonly>
+                                    <div class="invalid-feedback">
+                                        Insira uma cidade válida
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="zip">CEP</label>
+                                    <input type="text" name="cep" class="form-control" id="zip" value="{{cep}}" readonly>
+                                    <div class="invalid-feedback">
+                                        Insira um CEP válido
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userName">Nome de usuário</label>
+                                <input type="text" name="usuario" class="form-control" id="userName" placeholder="" value="{{usuario}}" readonly>
+                                <div class="invalid-feedback">
+                                    Insira uma nome de usuário válido
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password">Senha</label>
+                                <input type="password" name="senha" class="form-control" id="password" placeholder="" value="**********" readonly>
+                                <div class="invalid-feedback">
+                                    Insira uma senha válida
+                                </div>
+                            </div>
+                            
+                        </form>
+                            
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+              
+        </div>
+        <!-- /Cadastro -->

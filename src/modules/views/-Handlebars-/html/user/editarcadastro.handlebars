@@ -1,0 +1,121 @@
+<!-- Texto Cadastro -->
+        <section class="py-5">
+            <div class="container">
+            </div>
+        </section>
+        <!-- /Texto Cadastro -->
+        
+
+        
+        <!-- Cadastro -->
+        <div class="container">
+            <div class="cadastro-div">
+                <div class="row">
+                    
+    
+                    <div class="col-md-8 order-md-1 ">
+                        <h4 class="mb-3 alert alert-dark text-cadastro">Editar cadastro</h4>
+
+                        <li class="nav-item active badge">
+                            <a class="nav-item active" href="minhaconta.html" style="color: black;" href="#">
+                                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+                                </svg>
+                                Minha conta<span class="sr-only">(current)</span>    
+                            </a>
+                        </li>
+                        <hr class="mb-4">
+                        
+                        <form class="needs-validation" method="POST" novalidate>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3 teste">
+                                    <label for="firstName">Nome</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value="{{nome}}" required>
+                                    <div class="invalid-feedback">
+                                        Insira um nome válido
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName">Sobrenome</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="{{sobrenome}}" required>
+                                    <div class="invalid-feedback">
+                                        Insira um sobrenome válido
+                                    </div>
+                                </div>
+                            </div>
+                    
+                    
+                            <div class="mb-3">
+                                <label for="email">Email <span class="text-muted"></span></label>
+                                <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" value="{{email}}" required>
+                                <div class="invalid-feedback">
+                                    Insira um email válido
+                                </div>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label for="address">Endereço</label>
+                                <input type="text" class="form-control" id="address" placeholder="Rua barão do rio branco, 245, casa 1" value="{{endereco}}" required>
+                                <div class="invalid-feedback">
+                                    Insira um endereço válido
+                                </div>
+                            </div>
+                    
+                            <div class="row">
+                                
+                                <div class="col-md-4 mb-3">
+                                    <label for="state">Estado</label>
+                                    <select class="custom-select d-block w-100" id="state" required>
+                                        <option value="{{estado}}">Escolha...</option>
+                                        <option>Alagoas</option>
+                                        <option>Bahia</option>
+                                        <option>Ceará</option>
+                                        <option>Maranhão</option>
+                                        <option>Paraíba</option>
+                                        <option>Pernambuco </option>
+                                        <option>Piauí </option>
+                                        <option>Rio Grande do Norte</option>
+                                        <option>Sergipe</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Insira um estado válido
+                                    </div>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <label for="zip">Cidade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" value="{{cidade}}" required>
+                                    <div class="invalid-feedback">
+                                        Insira uma cidade válida
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="zip">CEP</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" value="{{cep}}" required>
+                                    <div class="invalid-feedback">
+                                        Insira um CEP válido
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address">Senha</label>
+                                <input type="text" class="form-control" id="address" placeholder="" value="{{senha}}" readonly>
+                            </div>
+                            
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input text-secondary" id="same-address" checked>
+                                <label class="custom-control-label" for="same-address">Desejo receber notícias e novidades</label>
+                            </div>
+                            
+                            <hr class="mb-4"> 
+                            <button class="btn btn-secondary btn-lg btn-block" type="submit">Salvar alterações</button>
+                            
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+              
+        </div>
+        <!-- /Cadastro -->

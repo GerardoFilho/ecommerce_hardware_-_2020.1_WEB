@@ -1,0 +1,126 @@
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.custom-logo{
+    height: 70px;
+}
+
+#outros{
+    background: rgb(34, 32, 32);
+}
+
+.footer{
+    background: rgb(34, 32, 32);
+    color: rgb(255, 255, 255);
+    padding: 30px 30px 30px 30px;
+    margin-top: auto;
+    text-align: center;
+    font-weight: 100;
+}
+
+.mini-menu{
+    float: left;
+}
+
+.cont-outros{
+    padding: 25px;
+}
+
+.caixa-texto{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.login-text{
+    padding-right: 570px;
+}
+
+.texto-nav{
+    padding-left: 490px;
+}
+
+.topo-pagina{
+    background: black;
+}
+
+.footer{
+    background: black;
+}
+
+/* Ícones */
+.icone-face{
+    padding-left: 6px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+
+a.icone-face:hover{
+    background-color: blue;
+    text-decoration: none;
+}
+
+.icone-insta{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+
+a.icone-insta:hover{
+    background-color: rgb(177, 22, 82);
+    text-decoration: none;
+}
+
+.icone-twitter{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+
+a.icone-twitter:hover{
+    background-color: rgb(20, 138, 153);
+    text-decoration: none;
+}
+
+/* Tela de login */
+.logo-login{
+    padding-left: 120px;
+}
+
+.texto-login{
+    padding-left: 40px;
+}
+
+#inputEmail{
+    width: 300px;
+}
+
+#inputPassword{
+    width: 300px;
+}
+
+.botao-login{
+    width: 300px;
+}
+
+.login-div{
+    padding-left: 370px;
+}
+
+/* Telas de cadastro */
+.text-cadastro{
+    text-align: center;
+}
+
+.cadastro-div{
+    padding-left: 300px;
+}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loja WEB</title>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="../../css/estilo.css">
+        <link rel="stylesheet" href="../../css/normalize.css">
+
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-expand-lg TOP topo-pagina" >
+            <a class="icone-face" href="https://www.facebook.com"> 
+                <img src="../../img/icones/images/facebook.png"  width="15px" height="15px" alt="">
+            </a>
+
+            <a class="icone-insta" href="https://www.instagram.com">
+                <img src="../../img/icones/images/instagram.png"  width="15px" height="15px" alt="">
+            </a>
+
+            <a class="icone-twitter" href="https://www.twitter.com">
+                <img src="../../img/icones/images/twitter.png"  width="15px" height="15px" alt="">
+            </a>
+        </nav>
+
+        <!-- Início de navegação -->
+        <a href="https://api.whatsapp.com/send?phone=85997442512&text=Teste" target= "_blank">
+            <img src="../../img/wpp.png" width="35px" height="35px" style="position: fixed; right: 30px; bottom: 30px;">
+
+        <a href="#TOP">
+            <svg  width="28px" height="28px" style="position: fixed; right: 35px; bottom: 80px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill text-secondary" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+            </svg>
+        </a>    
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  >
+
+            <a class="texto-nav"></a>
+            
+            <a class="navbar-brand" href="../../index.html">
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-bug-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A4.985 4.985 0 0 0 3 6h10a4.985 4.985 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A4.978 4.978 0 0 0 8 1a4.979 4.979 0 0 0-2.731.811l-.29-.956zM13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5H13zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975z"/>
+                </svg>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Placa de Vídeo
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="rtx.html">Todos</a>
+                            <a class="dropdown-item" href="rtx3090.html">RTX 3090</a>
+                            <a class="dropdown-item" href="rtx3080.html">RTX 3080</a>
+                            <a class="dropdown-item" href="rtx3070.html">RTX 3070</a>
+                        </div>
+                    </li>
+                    
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Xiaomi
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../xiaomi/xiaomi.html">Todos</a>
+                            <a class="dropdown-item" href="../xiaomi/miseries.html">Mi Series</a>
+                            <a class="dropdown-item" href="../xiaomi/redmiseries.html">Redmi Series</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            IPhone
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../iphone/iphone.html">Todos</a>
+                            <a class="dropdown-item" href="../iphone/iphone11series.html">IPhone 11 Series</a>
+                            <a class="dropdown-item" href="../iphone/iphonexseries.html">IPhone X Series</a>
+                            <a class="dropdown-item" href="../iphone/iphone8series.html">IPhone 8 Series</a>
+                            <a class="dropdown-item" href="../iphone/iphone7series.html">IPhone 7 Series</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Samsung
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../samsung/samsung.html">Todos</a>
+                            <a class="dropdown-item" href="../samsung/galaxynoteseries.html">Galaxy Note Series</a>
+                            <a class="dropdown-item" href="../samsung/galaxysseries.html">Galaxy S Series</a>
+                            <a class="dropdown-item" href="../samsung/galaxyaseries.html">Galaxy A Series</a>
+                        </div>
+                    </li>
+
+                    <form class="form-inline my-2 my-lg-0 caixa-texto">
+                        
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" style="width: 600px;" >
+                        <button type="button" class="btn btn-secondary" type="submit" >
+                            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>   
+                        </button>  
+                                       
+                    </form>
+
+                </ul>
+            
+                <a class="nav-link login-text text-muted" href="../user/login.html" > <span class="sr-only" >(current)</span>
+                    <svg width="2.2em" height="2.2em" viewBox="0 0 16 16" class="bi bi-person-circle text-secondary icon-login" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                    </svg>
+                    Minha conta
+                </a> 
+
+            </div>
+
+        </nav>
+        <!-- /Fim de navegação -->
+    
+       
+        
+        <!-- Destaques da Semana -->
+        <section class="py-5">
+            <div class="container">
+                <h1 class="font-weight-light alert alert-dark" style="text-align: center;">RTX</h1>
+            </div>
+        </section>
+        <!-- /Destaques da Semana -->
+
+        
+        <!-- Preços -->
+        <div class="container">
+
+            <ul class="navbar-nav mr-auto mini-menu">
+                    
+                <li class="nav-item active badge badge-secondary ">
+                    <a class="nav-link " href="rtx.html" style="color: black;" href="#">Placa de Vídeo<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-item active badge badge-light" style="color: black;" href="rtx3090.html">RTX 3090 <span class="sr-only">(current)</span></a> <br>
+                    <a class="nav-item active badge badge-light" style="color: black;" href="rtx3080.html">RTX 3080 <span class="sr-only">(current)</span></a><br>
+                    <a class="nav-item active badge badge-light" style="color: black;" href="rtx3070.html">RTX 3070 <span class="sr-only">(current)</span></a><br>
+                </li>
+                                
+            </ul>
+
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3090rogStrix.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Asus ROG Strix Geforce, RTX 3090, 24GB GDDR6X, 384bit, ROG-STRIX-RTX3090-O24G-GAMING</p> <br>
+                            <p class="card-text">R$ 14.279,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 13.429,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3090galax.png" alt="" width="80%" height="248">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Galax, GeForce, RTX 3090 EX Gaming White, 1 Click OC, 24GB, GDDR6X, 384Bit</p> <br>
+                            <p class="card-text">R$ 13.949,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 13.199,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3090msiGamingX.png" alt="" width="80%" height="248">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Galax, GeForce, RTX 3080 SG, 1 Click OC, 10GB, GDDR6X, 320Bit</p> <br>
+                            <p class="card-text">R$ 14.279,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 13.429,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3080AsusTUF.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Asus TUF Geforce, RTX 3080, 10GB, GDDR6X, 320bit, TUF-RTX3080-O10G-GAMING</p> <br>
+                            <p class="card-text">R$ 6.129,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 5.529,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3080ichill.png" alt="" width="80%" height="201">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo INNO3D Geforce, ICHILL X3, RTX 3080, 10GB, GDDR6X, 320bit, INNO3D GEFORCE RTX 3080 ICHILL X3</p> <br>
+                            <p class="card-text">R$ 6.649,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 5.999,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3080galaxBlack.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Galax, GeForce, RTX 3080 SG, 1 Click OC, 10GB, GDDR6X, 320Bit</p> <br>
+                            <p class="card-text">R$ 6.649,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 5.999,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3080galaxPink.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Galax, GeForce, RTX 3080 EX Gaming Pink, 1 Click OC, 10GB, GDDR6X, 320Bit</p> <br>
+                            <p class="card-text">R$ 6.649,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 5.999,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3080msiVentus.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo Galax, GeForce, RTX 3080 EX Gaming Pink, 1 Click OC, 10GB, GDDR6X, 320Bit</p> <br>
+                            <p class="card-text">R$ 6.649,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 5.999,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3070PNY.png" alt="" width="80%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo PNY, GeForce, RTX 3070 Dual, 8GB, GDDR6, 256Bit, VCG30708DFMPB</p> <br> 
+                            <p class="card-text">R$ 4.549,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 4.049,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="../../img/rtx3070PNYtri.png" alt="" width="80%" height="201">
+                        <div class="card-body">
+                            <p class="card-text">Placa de Vídeo PNY, GeForce, RTX 3070 XLR8 Gaming EPIC-X RGB Triple, 8GB, GDDR6, 256Bit, VCG30708TFXPPB</p> <br>
+                            <p class="card-text">R$ 4.849,90 no cartão
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+                                </svg>
+                            </p>
+                            <p class="card-text">R$ 4.349,90 no boleto
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                </svg>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="../user/fecharpedido.html" ><button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+        <!-- /Preços -->
+
+
+
+        <!-- Espaçamento -->
+        <section class="py-5">
+            <div class="container">
+
+            </div>
+        </section>
+        <!-- /Espaçamento -->
+
+
+         <!-- Outros -->
+         <section class="outros navbar-dark bg-dark ">
+            
+
+            <div class="container cont-outros">
+                <div class="row navbar-dark bg-dark">
+
+                    <div class="col-sm">
+                        <h5 style="color: rgb(255, 255, 255);">Formas de pagamento</h5>
+                        <ul class="list-unstyled text-small">
+                            <img src="../../img/pay.png" alt="">
+                        </ul>
+                    </div>
+
+                   
+                    <div class="col-sm">
+                        <h5 style="color: rgb(255, 255, 255);">Segurança</h5>
+                        <ul class="list-unstyled text-small">
+                            <img src="../../img/seguranca.png" alt="">
+                            <img src="../../img/segurança2.png" alt="">
+                            <img src="../../img/segurança3.png" alt="">
+                        </ul>
+                    </div>
+
+                    <div class="col-sm">
+                        <h5 style="color: rgb(255, 255, 255);">Redes Sociais</h5>
+                        <ul class="list-unstyled text-small">
+                            <a class="icone-face" href="https://www.facebook.com"> 
+                                <img src="../../img/icones/images/facebook.png"  width="15px" height="15px" alt="">
+                            </a>
+                
+                            <a class="icone-insta" href="https://www.instagram.com">
+                                <img src="../../img/icones/images/instagram.png"  width="15px" height="15px" alt="">
+                            </a>
+                
+                            <a class="icone-twitter" href="https://www.twitter.com">
+                                <img src="../../img/icones/images/twitter.png"  width="15px" height="15px" alt="">
+                            </a>
+                        </ul>
+                    </div>
+
+                </div>
+              </div>
+            
+        </section>
+        <!-- /Outros -->
+
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <span>&copy; 2020 - Site WEB</span>
+        </footer>
+        <!-- /Footer -->
+
+    </body>
+</html>
