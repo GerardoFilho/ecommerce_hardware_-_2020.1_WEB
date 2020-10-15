@@ -5,8 +5,9 @@
     "license": "MIT",
     "scripts": {
         "dev": "nodemon src/config/server.ts",
-        "start": "sucrase-node src/config/server.ts",
-        "build": ""
+        "start_dev": "sucrase-node src/config/server.ts",
+        "start": "node build/config/server.js",
+        "build": "sucrase ./src -d ./build --transforms  typescript,imports"
     },
     "devDependencies": {
         "@types/body-parser": "^1.19.0",
