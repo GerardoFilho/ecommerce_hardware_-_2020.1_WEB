@@ -14,7 +14,7 @@ class Config {
     public constructor (expr: importExpress.Application) {
       this._express = expr
       this.fbodyParser()
-      this.fsession()
+      this.fsession() 
       this.handlebars()
     }
 
