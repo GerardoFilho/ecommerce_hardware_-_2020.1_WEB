@@ -27,7 +27,6 @@
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.1",
         "esm": "^3.2.25",
-        "express-session": "^1.17.1",
         "mongoose": "^5.10.7",
         "nodemon": "^2.0.4",
         "ts-node": "^9.0.0",
@@ -41,6 +40,7 @@
         "espree": "^7.3.0",
         "express": "^4.17.1",
         "express-handlebars": "^5.1.0",
+        "express-session": "^1.17.1",
         "handlebars": "^4.7.6",
         "sucrase": "^3.16.0",
         "yarn": "^1.22.10"
