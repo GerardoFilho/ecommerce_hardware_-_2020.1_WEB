@@ -7,7 +7,7 @@ class RouterCliente {
   express: importExpress.Application
   ctrlCliente: CtrlCliente
   func: Functions
-  url = 'usuario'
+  url = 'usuario/'
 
   public constructor (express, func) {
     this.func = func
