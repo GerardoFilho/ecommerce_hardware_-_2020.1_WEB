@@ -42,7 +42,7 @@ class ClienteController {
     })
   }
 
-  public updatePassword (res, req) {
+  public updatePassword (req) {
     if (
       req.body.usuario === null || req.body.usuario === '' ||
       req.body.senha === null || req.body.senha === '' ||
@@ -103,7 +103,6 @@ class ClienteController {
       })
   }
 
-  // ainda vai ser feito
   public authentication (req, res) {
     if (!req.body.usuario || !req.body.senha) {
       res.status(400)

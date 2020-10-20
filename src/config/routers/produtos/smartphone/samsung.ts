@@ -5,6 +5,7 @@ export default
 class RouterSamsung {
     express: importExpress.Application
     func: Functions
+    url = 'product/smartphone/samsung/'
 
     public constructor (express, func) {
       this.express = express
@@ -17,25 +18,25 @@ class RouterSamsung {
 
     private samsung () {
       this.express.get('/samsung', (req, res) => {
-        this.func.globalRender(req, res, 'samsung/samsung')
+        this.func.globalRender(req, res, this.url + 'samsung')
       })
     }
 
     private galaxynoteseries () {
       this.express.get('/galaxynoteseries', (req, res) => {
-        this.func.globalRender(req, res, 'samsung/galaxynoteseries')
+        this.func.globalRender(req, res, this.url + 'galaxynoteseries')
       })
     }
 
     private galaxyseries () {
       this.express.get('/galaxysseries', (req, res) => {
-        this.func.globalRender(req, res, 'samsung/galaxysseries')
+        this.func.globalRender(req, res, this.url + 'galaxysseries')
       })
     }
 
     private galaxaseries () {
       this.express.get('/galaxyaseries', (req, res) => {
-        this.func.globalRender(req, res, 'samsung/galaxyaseries')
+        this.func.globalRender(req, res, this.url + 'galaxyaseries')
       })
     }
 }

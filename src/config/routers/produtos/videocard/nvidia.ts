@@ -5,6 +5,7 @@ export default
 class RouterNvidia {
   express: importExpress.Application
   func : Functions
+  url = 'product/videocard/nvidia/rtx/'
 
   public constructor (express, func) {
     this.express = express
@@ -17,25 +18,25 @@ class RouterNvidia {
 
   private rtx () {
     this.express.get('/rtx', (req, res) => {
-      this.func.globalRender(req, res, 'rtx/rtx')
+      this.func.globalRender(req, res, this.url + 'rtx')
     })
   }
 
   private rtx3090 () {
     this.express.get('/rtx3090', (req, res) => {
-      this.func.globalRender(req, res, 'rtx/rtx3090')
+      this.func.globalRender(req, res, this.url + 'rtx3090')
     })
   }
 
   private rtx3080 () {
     this.express.get('/rtx3080', (req, res) => {
-      this.func.globalRender(req, res, 'rtx/rtx3080')
+      this.func.globalRender(req, res, this.url + 'rtx3080')
     })
   }
 
   private rtx3070 () {
     this.express.get('/rtx3070', (req, res) => {
-      this.func.globalRender(req, res, 'rtx/rtx3070')
+      this.func.globalRender(req, res, this.url + 'rtx3070')
     })
   }
 }

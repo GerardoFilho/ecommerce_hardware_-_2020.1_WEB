@@ -24,7 +24,7 @@ class RouterUsuario {
         return
       }
 
-      this.func.globalRender(req, res, 'user/login')
+      this.func.globalRender(req, res, 'usuario/login')
     })
 
     this.express.post('/login', (req, res) => {
