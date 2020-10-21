@@ -34,7 +34,14 @@ class RouterCliente {
   private editarcadastro () {
     this.express.get('/editarcadastro', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.view(req, res, this.url + 'editarcadastro')
+      this.ctrlCliente.view(req).then(options => {
+        if (options) {
+          this.func.setOptions(options)
+          this.func.globalRender(req, res, this.url + 'editarcadastro')
+          return
+        }
+        res.redirect(req.get('referer'))
+      })
     })
     this.express.post('/editarcadastro', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
@@ -57,8 +64,13 @@ class RouterCliente {
     })
     this.express.post('/trocarsenha', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.updatePassword(req)
-      this.func.globalRender(req, res, this.url + 'trocarsenha')
+      this.ctrlCliente.updatePassword(req).then(resCode => {
+        if (!resCode) {
+          this.func.globalRender(req, res, this.url + 'trocarsenha')
+          return
+        }
+        res.redirect(req.get('referer'))
+      })
     })
   }
 
@@ -70,14 +82,27 @@ class RouterCliente {
 
     this.express.post('/excluirconta', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.delete(req, res)
+      this.ctrlCliente.delete(req).then(resCode => {
+        if (!resCode) {
+          res.redirect(302, '/')
+          return
+        }
+        res.redirect(req.get('referer'))
+      })
     })
   }
 
   private meucadastro () {
     this.express.get('/meucadastro', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.view(req, res, this.url + 'meucadastro')
+      this.ctrlCliente.view(req).then(options => {
+        if (options) {
+          this.func.setOptions(options)
+          this.func.globalRender(req, res, this.url + 'meucadastro')
+          return
+        }
+        res.redirect(req.get('referer'))
+      })
     })
   }
 
@@ -87,7 +112,13 @@ class RouterCliente {
     })
 
     this.express.post('/cadastro', (req, res) => {
-      this.ctrlCliente.register(req, res)
+      this.ctrlCliente.register(req).then(resCode => {
+        if (!resCode) {
+          res.redirect(302, '/login')
+          return
+        }
+        res.redirect(req.get('referer'))
+      })
     })
   }
 

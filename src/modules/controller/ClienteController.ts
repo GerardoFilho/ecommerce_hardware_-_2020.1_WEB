@@ -4,26 +4,25 @@ export default
 class ClienteController {
   dao = new DAO()
 
-  public view (req, res, view: string) {
-    this.dao.read(req.session.usuario).then(ret => {
-      var options = {
+  public view (req) {
+    return this.dao.read(req.session.usuario).then(ret => {
+      return {
         logged: true,
         ...ret.toObject()
       }
-
-      res.render(view, options)
     }).catch(err => {
       console.log('Erro ao buscar cliente => ' + err)
+      return null
     })
   }
 
-  public register (req, res) {
-    this.dao.create(req.body).then(ret => {
+  public register (req): Promise<number> {
+    return this.dao.create(req.body).then(ret => {
       console.log('Cliente salvo' + ret)
-      res.redirect(302, '/login')
+      return 0
     }).catch(err => {
       console.log('Erro ao cadastrar cliente ' + err)
-      res.redirect(req.get('referer'))
+      return 1
     })
     // fazer tratamento de erros depois
   }
@@ -42,26 +41,24 @@ class ClienteController {
     })
   }
 
-  public updatePassword (req) {
-    if (
-      req.body.usuario === null || req.body.usuario === '' ||
-      req.body.senha === null || req.body.senha === '' ||
-      req.body.novasenha === null || req.body.novasenha === '' ||
-      req.body.novasenhaconfirmacao === null || req.body.novasenhaconfirmacao === '') {
-      console.log('Dados inválidos')
-      return
-    } else if (req.body.novasenha !== req.body.novasenhaconfirmacao) {
-      console.log('Novas senhas divergentes')
-      return
-    } else if (req.body.usuario !== req.session.usuario) {
-      console.log('Usuario inválido')
-      return
-    }
-
-    this.dao.read(req.body.usuario).then(ret => {
-      if (ret.senha !== req.body.senha) {
+  public updatePassword (req): Promise<number> {
+    return this.dao.read(req.body.usuario).then(ret => {
+      if (
+        !req.body.usuario ||
+        !req.body.senha ||
+        !req.body.novasenha ||
+        !req.body.novasenhaconfirmacao) {
+        console.log('Dados inválidos')
+        return 2
+      } else if (req.body.novasenha !== req.body.novasenhaconfirmacao) {
+        console.log('Novas senhas divergentes')
+        return 2
+      } else if (req.body.usuario !== req.session.usuario) {
+        console.log('Usuario inválido')
+        return 2
+      } else if (ret.senha !== req.body.senha) {
         console.log('Senha atual inválida')
-        return
+        return 3
       }
       var cliente = {
         senha: req.body.novasenha
@@ -70,57 +67,66 @@ class ClienteController {
       console.log(cliente)
       this.dao.update(cliente, req.session.usuario).then(res => {
         console.log('Senha do cliente atualizada ' + res)
+        return 0
       }).catch(err => {
         console.log('Erro ao atualizar dados do cliente ' + err)
+        return 6
       })
     }).catch(err => {
       console.log('Usuario inválido ' + err)
+      return 4
     })
   }
 
-  public delete (req, res) {
-    if (req.body.senha !== req.body.senhaconfirmacao || req.body.usuario === null) {
-      console.log('Usuario ou senha inválidos')
-      res.redirect(req.get('referer'))
-      return
-    }
+  public delete (req): Promise<number> {
     // tratar mensagem de erro depois
-    this.dao.read(req.body.usuario)
+    return this.dao.read(req.body.usuario)
       .then(ret => {
-        if (ret.senha === req.body.senha) {
-          this.dao.delete(req.body.usuario).then(rett => {
-            console.log('Cliente deletado')
-            req.session.usuario = null
-            res.redirect(302, '/')
-          }).catch(err => {
-            console.log('Erro ao deletar cliente deletado ' + err)
-            res.redirect(req.get('referer'))
-          })
+        if (req.body.senha !== req.body.senhaconfirmacao || req.body.usuario === null) {
+          console.log('Usuario ou senha inválidos')
+          return 2
+        } else if (ret.senha !== req.body.senha) {
+          console.log('senha incorreta')
+          return 3
         }
+        return this.dao.delete(req.body.usuario).then(rett => {
+          console.log('Cliente deletado')
+          req.session.usuario = null
+          return 0
+        }).catch(err => {
+          console.log('Erro ao deletar cliente ' + err)
+          return 5
+        })
       }).catch(err => {
         console.log('Usuario nao encontrado ' + err)
-        res.redirect(req.get('referer'))
+        return 4
       })
   }
 
-  public authentication (req, res) {
-    if (!req.body.usuario || !req.body.senha) {
-      res.status(400)
-      res.send('Credenciais invalálidas')
-      return
-    }
-    this.dao.read(req.body.usuario)
-      .then((ret) => {
-        if (ret.usuario !== req.body.usuario || ret.senha !== req.body.senha) {
-          res.redirect(req.get('referer'))
-          return
+  /*
+    0 = sucesso
+    1 = senha ou usuário em branco
+    2 = senha ou usuário inválido
+    3 = Senha incorreta
+    4 = Erro ao buscar cliente
+    5 = Erro ao deletar cliente
+    6 = Erro ao atualiza cliente
+    7 = Erro ao cadastrar cliente
+  */
+  public authentication (req): Promise<number> {
+    return this.dao.read(req.body.usuario)
+      .then((res) => {
+        if (!req.body.usuario || !req.body.senha) {
+          console.log('senha ou usuário em branco')
+          return 1
+        } else if (res.usuario !== req.body.usuario || res.senha !== req.body.senha) {
+          return 2
         }
-
         req.session.usuario = req.body.usuario
-        res.redirect(302, '/minhaconta')
+        return 0
       }).catch(err => {
         console.log('Erro buscar usuario ' + err)
-        res.redirect(req.get('referer'))
+        return 4
       })
   }
 }

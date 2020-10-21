@@ -21,4 +21,8 @@ class RouterCliente {
     this.hasLogged(req)
     res.render(page, this.options)
   }
+
+  public setOptions (options) {
+    this.options = options
+  }
 }
