@@ -38,9 +38,9 @@ class RouterCliente {
         if (options) {
           this.func.setOptions(options)
           this.func.globalRender(req, res, this.url + 'editarcadastro')
-          return
+        } else {
+          res.redirect(req.get('referer'))
         }
-        res.redirect(req.get('referer'))
       })
     })
     this.express.post('/editarcadastro', (req, res) => {
@@ -67,9 +67,9 @@ class RouterCliente {
       this.ctrlCliente.updatePassword(req).then(resCode => {
         if (!resCode) {
           this.func.globalRender(req, res, this.url + 'trocarsenha')
-          return
+        } else {
+          res.redirect(req.get('referer'))
         }
-        res.redirect(req.get('referer'))
       })
     })
   }
@@ -85,9 +85,9 @@ class RouterCliente {
       this.ctrlCliente.delete(req).then(resCode => {
         if (!resCode) {
           res.redirect(302, '/')
-          return
+        } else {
+          res.redirect(req.get('referer'))
         }
-        res.redirect(req.get('referer'))
       })
     })
   }
@@ -99,9 +99,9 @@ class RouterCliente {
         if (options) {
           this.func.setOptions(options)
           this.func.globalRender(req, res, this.url + 'meucadastro')
-          return
+        } else {
+          res.redirect(req.get('referer'))
         }
-        res.redirect(req.get('referer'))
       })
     })
   }
@@ -112,12 +112,14 @@ class RouterCliente {
     })
 
     this.express.post('/cadastro', (req, res) => {
-      this.ctrlCliente.register(req).then(resCode => {
-        if (!resCode) {
-          res.redirect(302, '/login')
-          return
+      this.ctrlCliente.register(req).then(options => {
+        this.func.setOptions(options)
+        if (options.cadastrado) {
+          res.redirect(req.get('referer'))
+          // res.redirect(302, '/login')
+        } else {
+          res.redirect(req.get('referer'))
         }
-        res.redirect(req.get('referer'))
       })
     })
   }

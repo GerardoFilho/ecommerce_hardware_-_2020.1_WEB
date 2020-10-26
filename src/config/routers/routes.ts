@@ -33,6 +33,16 @@ class Routes {
 
   private index () {
     this.express.get('/', (req, res) => {
+      this.func.setOptions({
+        item: [{
+          nome: 'teste',
+          sobrenome: 'agora'
+        }, {
+          nome: 'outro',
+          sobrenome: 'teste'
+        }]
+      }
+      )
       this.func.globalRender(req, res, 'index')
     })
   }

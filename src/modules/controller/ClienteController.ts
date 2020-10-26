@@ -6,9 +6,15 @@ class ClienteController {
 
   public view (req) {
     return this.dao.read(req.session.usuario).then(ret => {
+      ret = ret.toObject()
+      var tam = ret.senha.length
+      ret.senha = ''
+      for (var i = 0; i < tam; i++) {
+        ret.senha += '0'
+      }
       return {
         logged: true,
-        ...ret.toObject()
+        ...ret
       }
     }).catch(err => {
       console.log('Erro ao buscar cliente => ' + err)
@@ -16,13 +22,15 @@ class ClienteController {
     })
   }
 
-  public register (req): Promise<number> {
+  public register (req) {
+    var options = { tryregister: true }
+
     return this.dao.create(req.body).then(ret => {
       console.log('Cliente salvo' + ret)
-      return 0
+      return { ...options, cadastrado: true }
     }).catch(err => {
       console.log('Erro ao cadastrar cliente ' + err)
-      return 1
+      return { ...options, cadastrado: false }
     })
     // fazer tratamento de erros depois
   }
@@ -113,20 +121,22 @@ class ClienteController {
     6 = Erro ao atualiza cliente
     7 = Erro ao cadastrar cliente
   */
-  public authentication (req): Promise<number> {
+  public authentication (req) {
+    var options = { loginfail: true }
     return this.dao.read(req.body.usuario)
       .then((res) => {
         if (!req.body.usuario || !req.body.senha) {
           console.log('senha ou usuário em branco')
-          return 1
+          return options
         } else if (res.usuario !== req.body.usuario || res.senha !== req.body.senha) {
-          return 2
+          return options
         }
         req.session.usuario = req.body.usuario
-        return 0
+        options.loginfail = false
+        return options
       }).catch(err => {
         console.log('Erro buscar usuario ' + err)
-        return 4
+        return options
       })
   }
 }

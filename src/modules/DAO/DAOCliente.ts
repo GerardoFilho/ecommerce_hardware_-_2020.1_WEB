@@ -12,13 +12,13 @@ class DAOCliente {
         const schema = new mongoose.Schema({
           usuario: { type: String, required: true },
           senha: { type: String, required: true },
-          email: { type: String },
-          nome: { type: String },
+          email: { type: String, required: true },
+          nome: { type: String, required: true },
           endereco: { type: String },
           estado: { type: String },
           cidade: { type: String },
           cep: { type: String },
-          cpf: { type: Number }
+          cpf: { type: String }
         })
 
         mongoose.model('cliente', schema, 'cliente')

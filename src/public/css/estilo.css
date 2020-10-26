@@ -1,3 +1,71 @@
+body {
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fixed-icons * {
+    z-index: 1;
+}
+
+
+/*
+    Navbar
+*/
+
+.container-body * {
+    margin: 0 auto;
+}
+
+.container-navbar {
+    margin: 0 auto;
+    display: flex;
+}
+
+.container-navbar * {
+    justify-content: space-between;
+}
+
+.nav-icons * {
+    height: 100%;
+}
+
+.nav-main {
+    justify-content: space-between;
+}
+
+.nav-search * {
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 991px) {
+    .label-conta {
+        display: none;
+    }
+    .navTop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .container-navbar {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    input[type=search] {
+        min-width: 400px;
+    }
+    .container-navbar {
+        width: 80%;
+    }
+    .navBotton {
+        display: none;
+    }
+}
+
 .carousel-item {
     height: 65vh;
     min-height: 350px;
@@ -8,15 +76,15 @@
     background-size: cover;
 }
 
-.custom-logo{
+.custom-logo {
     height: 70px;
 }
 
-#outros{
+#outros {
     background: rgb(34, 32, 32);
 }
 
-.footer{
+.footer {
     background: rgb(34, 32, 32);
     color: rgb(255, 255, 255);
     padding: 30px 30px 30px 30px;
@@ -25,102 +93,186 @@
     font-weight: 100;
 }
 
-.mini-menu{
+.mini-menu {
     float: left;
 }
 
-.cont-outros{
+.cont-outros {
     padding: 25px;
 }
 
-.caixa-texto{
-    padding-left: 30px;
-    padding-right: 10px;
-}
-
-.login-text{
-    padding-right: 570px;
-}
-
-.texto-nav{
+.texto-nav {
     padding-left: 490px;
 }
 
-.topo-pagina{
+.topo-pagina {
     background: black;
 }
 
-.footer{
+.footer {
     background: black;
 }
+
 
 /* Ícones */
-.icone-face{
-    padding-left: 6px;
+
+.icone-insta,
+.icone-face,
+.icone-twitter {
+    padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 3px;
 }
 
-a.icone-face:hover{
+a.icone-insta:hover,
+a.icone-face:hover,
+a.icone-twitter:hover {
+    text-decoration: none;
+}
+
+a.icone-face:hover {
     background-color: blue;
-    text-decoration: none;
 }
 
-.icone-insta{
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 1px;
-    padding-bottom: 3px;
-}
-
-a.icone-insta:hover{
+a.icone-insta:hover {
     background-color: rgb(177, 22, 82);
-    text-decoration: none;
 }
 
-.icone-twitter{
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 1px;
-    padding-bottom: 3px;
-}
-
-a.icone-twitter:hover{
+a.icone-twitter:hover {
     background-color: rgb(20, 138, 153);
-    text-decoration: none;
 }
+
+
+/* line: container content */
+
+.line-container {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.line-container * {
+    margin: auto;
+    margin-top: 5%;
+}
+
+
+/*
+.line-content {
+    margin: auto;
+    margin-top: 5%;
+}*/
+
+.line-content input[type="text"],
+.line-content input[type="password"] {
+    height: 100%;
+}
+
+
+/* input */
+
+input {
+    height: calc(1.5em + .75rem + 2px);
+    padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    font-weight: 400;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+input:focus {
+    border: 1px solid rgb(128 189 255);
+    box-shadow: 0 0 0 2pt rgb(191 222 255);
+    outline: none;
+}
+
+input[type=search] {
+    width: 79% !important;
+}
+
+.btn-search {
+    width: 19%;
+}
+
+.nav-btn-search {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
 
 /* Tela de login */
-.logo-login{
-    padding-left: 120px;
+
+.logo-login {
+    width: max-content;
 }
 
-.texto-login{
-    padding-left: 40px;
-}
-
-#inputEmail{
-    width: 300px;
-}
-
-#inputPassword{
-    width: 300px;
-}
-
-.botao-login{
-    width: 300px;
-}
-
-.login-div{
-    padding-left: 370px;
-}
-
-/* Telas de cadastro */
-.text-cadastro{
+.texto-login {
     text-align: center;
 }
 
-.cadastro-div{
-    padding-left: 300px;
+#inputEmail {
+    width: 100%;
 }
+
+#inputPassword {
+    width: 100%;
+}
+
+.botao-login {
+    width: 100%;
+}
+
+
+/*
+    Div
+*/
+
+.div-login {
+    top: 2%;
+    width: 90%;
+    max-width: 300px;
+}
+
+.div-cadastro {
+    width: 100% !important;
+    max-width: 668px;
+}
+
+.div-cadastro-row {
+    justify-content: space-between;
+}
+
+.div-cadastro-row div {
+    padding-left: 0px !important;
+    min-width: 20%;
+}
+
+
+/* 
+    Textos
+*/
+
+.text-cadastro {
+    text-align: center;
+}
+
+.erro-text {
+    padding-left: 20px;
+    color: red;
+    border-radius: 3px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container-footer {
+    margin-top: 2%;
+}
+
+
+/*
+.slide-index {
+    top: -2%;
+}*/

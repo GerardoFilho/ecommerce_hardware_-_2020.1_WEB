@@ -37,6 +37,7 @@ class Config {
       this._express.engine('handlebars', exphbs({
         extname: 'handlebars',
         layoutsDir: this.dirViews + 'layouts',
+        partialsDir: this.dirViews + 'partials',
         defaultLayout: 'main'
       }))
     }

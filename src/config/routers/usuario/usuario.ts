@@ -34,11 +34,13 @@ class RouterUsuario {
       }
 
       this.ctrlCliente.authentication(req)
-        .then(resCode => {
-          if (!resCode) {
+        .then(options => {
+          if (!options.loginfail) {
             res.redirect(302, '/minhaconta')
             return
-          } else if (resCode === 1) { res.status(400) }
+          }
+          console.log('äaaaaaa' + options.loginfail)
+          this.func.setOptions(options)
           res.redirect(req.get('referer'))
         })
     })
