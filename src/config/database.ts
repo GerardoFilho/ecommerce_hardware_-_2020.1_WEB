@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 export default
 class Database {
-    url: string = 'mongodb://localhost/ecommerce'
-    // url: string = 'mongodb+srv://dev:devforweb@cluster0.ne9ih.mongodb.net/ecommerce?retryWrites=true&w=majority'
+    //url: string = 'mongodb://localhost/ecommerce'
+    url: string = 'mongodb+srv://dev:devforweb@cluster0.ne9ih.mongodb.net/ecommerce?retryWrites=true&w=majority'
     options = {
       useNewUrlParser: true,
       useUnifiedTopology: true
