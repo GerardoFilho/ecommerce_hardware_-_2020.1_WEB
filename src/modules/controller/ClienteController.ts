@@ -27,10 +27,10 @@ class ClienteController {
 
     return this.dao.create(req.body).then(ret => {
       console.log('Cliente salvo' + ret)
-      return { ...options, cadastrado: true }
+      return { ...options, cadastrado: true, popupMessage: 'Usuário cadastrado com sucesso' }
     }).catch(err => {
       console.log('Erro ao cadastrar cliente ' + err)
-      return { ...options, cadastrado: false }
+      return { ...options, cadastrado: false, popupMessage: 'Erro ao cadastrar cliente' }
     })
     // fazer tratamento de erros depois
   }
