@@ -45,8 +45,10 @@ class RouterCliente {
     })
     this.express.post('/editarcadastro', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.update(req)
-      res.redirect(req.get('referer'))
+      this.ctrlCliente.update(req).then(options => {
+        this.func.setOptions(options)
+        res.redirect(req.get('referer'))
+      })
     })
   }
 
@@ -60,15 +62,20 @@ class RouterCliente {
   private trocarsenha () {
     this.express.get('/trocarsenha', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.func.globalRender(req, res, this.url + 'trocarsenha')
+      if (req.query.ok === 'true') {
+        this.func.globalRender(req, res, this.url + 'minhaconta')
+      } else {
+        this.func.globalRender(req, res, this.url + 'trocarsenha')
+      }
     })
     this.express.post('/trocarsenha', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.updatePassword(req).then(resCode => {
-        if (!resCode) {
-          this.func.globalRender(req, res, this.url + 'trocarsenha')
-        } else {
+      this.ctrlCliente.updatePassword(req).then(options => {
+        this.func.setOptions(options)
+        if (options.updated) {
           res.redirect(req.get('referer'))
+        } else {
+          this.func.globalRender(req, res, this.url + 'trocarsenha')
         }
       })
     })
@@ -82,8 +89,9 @@ class RouterCliente {
 
     this.express.post('/excluirconta', (req, res) => {
       this.func.sessionExpired(req, res, '/login')
-      this.ctrlCliente.delete(req).then(resCode => {
-        if (!resCode) {
+      this.ctrlCliente.delete(req).then(options => {
+        this.func.setOptions(options)
+        if (options.deleted) {
           res.redirect(302, '/')
         } else {
           res.redirect(req.get('referer'))
@@ -109,6 +117,12 @@ class RouterCliente {
   private cadastro () {
     this.express.get('/cadastro', (req, res) => {
       this.func.globalRender(req, res, this.url + 'cadastro')
+
+      if (req.query.ok === 'true') {
+        res.redirect('/login')
+      } else {
+        this.func.globalRender(req, res, this.url + 'cadastro')
+      }
     })
 
     this.express.post('/cadastro', (req, res) => {

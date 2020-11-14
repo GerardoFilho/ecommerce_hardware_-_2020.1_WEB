@@ -5,6 +5,8 @@ class ClienteController {
   dao = new DAO()
 
   public view (req) {
+    var options = { tryregister: true, logged: true }
+
     return this.dao.read(req.session.usuario).then(ret => {
       ret = ret.toObject()
       var tam = ret.senha.length
@@ -13,12 +15,17 @@ class ClienteController {
         ret.senha += '0'
       }
       return {
-        logged: true,
-        ...ret
+        ...options,
+        ...ret,
+        encontrado: true
       }
     }).catch(err => {
       console.log('Erro ao buscar cliente => ' + err)
-      return null
+      return {
+        ...options,
+        encontrado: false,
+        popupMessage: 'Usuário não encontrado'
+      }
     })
   }
 
@@ -36,78 +43,79 @@ class ClienteController {
   }
 
   public update (req) {
-    // fazer tratamento de erros depois
-    if (req.body.usuario === null || req.body.usuario === '') {
-      console.log('usuario invalido')
-      return
-    }
+    var options = { tryupdate: true }
 
-    this.dao.update(req.body, req.session.usuario).then(res => {
-      console.log('Dados do cliente atualizados ' + res)
+    return this.dao.update(req.body, req.session.usuario).then(res => {
+      if (req.body.usuario === null || req.body.usuario === '') {
+        return { ...options, updated: false, popupMessage: 'Usuário inválido' }
+      } else {
+        console.log('Dados do cliente atualizados ' + res)
+        return { ...options, updated: true, popupMessage: 'Dados atualizados com sucesso' }
+      }
     }).catch(err => {
       console.log('Erro ao atualizar dados do cliente ' + err)
+      return { ...options, updated: false, popupMessage: 'Erro ao atualizar dados' }
     })
   }
 
-  public updatePassword (req): Promise<number> {
+  public updatePassword (req) {
+    var options = { trychangepass: true }
+
     return this.dao.read(req.body.usuario).then(ret => {
       if (
         !req.body.usuario ||
         !req.body.senha ||
         !req.body.novasenha ||
         !req.body.novasenhaconfirmacao) {
-        console.log('Dados inválidos')
-        return 2
+        return { ...options, updated: false, popupMessage: 'Dados inválidos' }
       } else if (req.body.novasenha !== req.body.novasenhaconfirmacao) {
-        console.log('Novas senhas divergentes')
-        return 2
+        return { ...options, updated: false, popupMessage: 'Os campos da nova senhas divergem' }
       } else if (req.body.usuario !== req.session.usuario) {
-        console.log('Usuario inválido')
-        return 2
+        return { ...options, updated: false, popupMessage: 'Usuário inválido' }
       } else if (ret.senha !== req.body.senha) {
-        console.log('Senha atual inválida')
-        return 3
+        return { ...options, updated: false, popupMessage: 'Senha atual inválida' }
       }
       var cliente = {
         senha: req.body.novasenha
       }
 
-      console.log(cliente)
-      this.dao.update(cliente, req.session.usuario).then(res => {
+      return this.dao.update(cliente, req.session.usuario).then(res => {
         console.log('Senha do cliente atualizada ' + res)
-        return 0
+        return { ...options, updated: true, popupMessage: 'Senha alterada com sucesso' }
       }).catch(err => {
         console.log('Erro ao atualizar dados do cliente ' + err)
-        return 6
+        return { ...options, updated: false, popupMessage: 'Erro ao atualizar atualizar senha' }
       })
     }).catch(err => {
       console.log('Usuario inválido ' + err)
-      return 4
+      return { ...options, updated: false, popupMessage: 'Usuário inválido' }
     })
   }
 
-  public delete (req): Promise<number> {
-    // tratar mensagem de erro depois
+  public delete (req) {
+    var options = { trydelete: true }
+
     return this.dao.read(req.body.usuario)
       .then(ret => {
         if (req.body.senha !== req.body.senhaconfirmacao || req.body.usuario === null) {
           console.log('Usuario ou senha inválidos')
-          return 2
+          return { ...options, deleted: false, popupMessage: 'Usuario ou senha inválidos' }
         } else if (ret.senha !== req.body.senha) {
           console.log('senha incorreta')
-          return 3
+          return { ...options, deleted: false, popupMessage: 'Senha Incorreta' }
         }
+
         return this.dao.delete(req.body.usuario).then(rett => {
           console.log('Cliente deletado')
           req.session.usuario = null
-          return 0
+          return { ...options, deleted: true, popupMessage: 'Usuario deletado' }
         }).catch(err => {
           console.log('Erro ao deletar cliente ' + err)
-          return 5
+          return { ...options, deleted: false, popupMessage: 'Erro ao deletar cliente ' }
         })
       }).catch(err => {
         console.log('Usuario nao encontrado ' + err)
-        return 4
+        return { ...options, deleted: false, popupMessage: 'Usuario nao encontrado' }
       })
   }
 

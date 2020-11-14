@@ -1,17 +1,15 @@
-<!-- Texto Cadastro -->
-<section class="py-5">
-    <div class="container">
-    </div>
-</section>
-<!-- /Texto Cadastro -->
-
-
+{{#if trychangepass}}
+{{#if updated}}
+{{>popup/sucess}}
+{{else}}
+{{>popup/fail}}
+{{/if}}
+{{/if}}
 
 <!-- Cadastro -->
 <div class="container">
     <div class="cadastro-div">
         <div class="row">
-
 
             <div class="col-md-8 order-md-1 ">
                 <h4 class="mb-3 alert alert-dark text-cadastro">Trocar senha</h4>

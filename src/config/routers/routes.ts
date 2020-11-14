@@ -43,7 +43,7 @@ class Routes {
         }]
       }
       )
-      this.func.globalRender(req, res, 'index')
+      this.func.globalRenderIndex(req, res, 'index')
     })
   }
 }

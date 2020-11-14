@@ -24,6 +24,12 @@ class RouterCliente {
     this.setOptionsDefault()
   }
 
+  public globalRenderIndex (req, res, page: string) {
+    this.hasLogged(req)
+    res.render(page, { ...this.options, layout: 'index' })
+    this.setOptionsDefault()
+  }
+
   public renderModel (res, modalName, model) {
     res.controllerFor(modalName).set('model', model)
     res.render(modalName, {
@@ -33,7 +39,7 @@ class RouterCliente {
   }
 
   public setOptions (options) {
-    this.options = options
+    this.options = { ...this.options, ...options }
   }
 
   private setOptionsDefault () {
