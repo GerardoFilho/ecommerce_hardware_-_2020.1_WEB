@@ -31,6 +31,13 @@ body {
     justify-content: space-between;
 }
 
+.container-iten {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-iten {}
+
 .nav-icons * {
     height: 100%;
 }
@@ -41,6 +48,15 @@ body {
 
 .nav-search * {
     justify-content: space-between;
+}
+
+.card-imagem-iten {
+    width: 80%;
+    height: 225px;
+}
+
+.card-title-iten {
+    height: 72px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -204,6 +220,10 @@ input[type=search] {
 .nav-btn-search {
     padding-left: 17px;
     padding-right: 17px;
+}
+
+.btn-buy {
+    margin-top: 15%;
 }
 
 
