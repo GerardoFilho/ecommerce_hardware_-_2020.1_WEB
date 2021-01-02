@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import importExpress from 'express'
 import Functions from './functions'
-import CtrlProduto from '../../../src/modules/controller/ProdutoController'
+import CtrlProduto from '../../modules/controller/ProdutoController'
 
 export default
 class Index {
