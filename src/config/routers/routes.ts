@@ -3,6 +3,7 @@ import importExpress from 'express'
 import RouterCliente from './usuario/cliente'
 import RouterUsuario from './usuario/usuario'
 import Functions from './functions'
+import RouterIndex from './index'
 import RouterNvidia from './produtos/videocard/nvidia'
 import RouterIphone from './produtos/smartphone/iphone'
 import RouterXiaomi from './produtos/smartphone/xiaomi'
@@ -18,7 +19,8 @@ class Routes {
     this.func = new Functions()
     this.express = expr_
 
-    this.index()
+    new RouterIndex(this.express, this.func)
+
     new RouterCliente(this.express, this.func)
     new RouterUsuario(this.express, this.func)
 
@@ -29,21 +31,5 @@ class Routes {
     new RouterSamsung(this.express, this.func)
 
     this.express.use(importExpress.json)
-  }
-
-  private index () {
-    this.express.get('/', (req, res) => {
-      this.func.setOptions({
-        item: [{
-          nome: 'teste',
-          sobrenome: 'agora'
-        }, {
-          nome: 'outro',
-          sobrenome: 'teste'
-        }]
-      }
-      )
-      this.func.globalRenderIndex(req, res, 'index')
-    })
   }
 }

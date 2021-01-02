@@ -57,6 +57,7 @@ body {
 
 .card-title-iten {
     height: 72px;
+    margin-bottom: 15%;
 }
 
 @media only screen and (max-width: 991px) {
